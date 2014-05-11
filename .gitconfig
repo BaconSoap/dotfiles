@@ -8,3 +8,5 @@
 	s = status --short
 [push]
 	default = simple
+[branch]
+	autosetuprebase = always
