@@ -6,6 +6,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
+let os=substitute(system('uname'), '\n', '', '')
+
+
 "" Custom plugins
 "" Languages
 Plugin 'leafgarland/typescript-vim'
@@ -48,4 +51,8 @@ colorscheme default
 set background=dark
 
 set cursorline
-hi CursorLine term=bold cterm=bold ctermbg=darkgrey 
+if os == 'Darwin' || os == 'Mac' 
+	hi CursorLine term=bold cterm=bold ctermbg=black
+else
+	hi CursorLine term=bold cterm=bold ctermbg=darkgrey guibg=Darkgrey 
+endif
