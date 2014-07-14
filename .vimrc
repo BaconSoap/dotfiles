@@ -24,6 +24,14 @@ syntax on
 set encoding=utf8
 set relativenumber
 
+"" powerline
+python import sys; sys.path.append("~/Library/Python/2.7/lib/python/site-packages/")
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+set laststatus=2
+set noshowmode
+
 "" Whitespace
 set nowrap
 set tabstop=2 shiftwidth=2
