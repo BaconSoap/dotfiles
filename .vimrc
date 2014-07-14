@@ -23,6 +23,7 @@ set nu
 syntax on
 set encoding=utf8
 set relativenumber
+set term=xterm-256color
 
 "" powerline
 python import sys; sys.path.append("~/Library/Python/2.7/lib/python/site-packages/")
