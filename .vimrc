@@ -13,6 +13,9 @@ let os=substitute(system('uname'), '\n', '', '')
 "" Languages
 Plugin 'leafgarland/typescript-vim'
 
+"" Extensions
+Plugin 'kien/ctrlp.vim'
+
 "" Vundle init
 
 call vundle#end()
