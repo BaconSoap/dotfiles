@@ -26,15 +26,28 @@ set nu
 syntax on
 set encoding=utf8
 set relativenumber
-set term=xterm-256color
+if os == 'MINGW32_NT-6.2'
+	let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d' 
+else
+	set term=xterm-256color
+endif
+
+"" CtrlP
+if os == 'MINGW32_NT-6.2'
+	let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d' 
+endif
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules|bower_components)$'
 
 "" powerline
-python import sys; sys.path.append("~/Library/Python/2.7/lib/python/site-packages/")
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-set laststatus=2
-set noshowmode
+if os != 'MINGW32_NT-6.2'
+	python import sys; sys.path.append("~/Library/Python/2.7/lib/python/site-packages/")
+	python from powerline.vim import setup as powerline_setup
+	python powerline_setup()
+	python del powerline_setup
+	set laststatus=2
+	set noshowmode
+endif
 
 "" Whitespace
 set nowrap
