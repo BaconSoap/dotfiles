@@ -32,13 +32,17 @@ else
 	set term=xterm-256color
 endif
 
+set modeline
+set modelines=5
+
 "" CtrlP
 if is_windows == 1
 	let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d' 
 endif
 
 let g:ctrlp_by_filename = 0
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules|bower_components)$'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_working_path_mode = 0
 
 "" powerline
 if is_windows == 0
@@ -82,3 +86,7 @@ if os == 'Darwin' || os == 'Mac'
 else
 	hi CursorLine term=bold cterm=bold ctermbg=darkgrey guibg=Darkgrey 
 endif
+
+"" Tabs/splits
+set splitright
+set splitbelow
