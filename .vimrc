@@ -1,6 +1,7 @@
 "" Vundle required 
 set nocompatible
 filetype off
+set ffs=unix,mac,dos
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -12,9 +13,11 @@ let is_windows = os == 'MINGW32_NT-6.2' || os == 'MINGW32_NT-6.1'
 "" Custom plugins
 "" Languages
 Plugin 'leafgarland/typescript-vim'
+Plugin 'wting/rust.vim'
 
 "" Extensions
 Plugin 'kien/ctrlp.vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 "" Vundle init
 
@@ -41,7 +44,7 @@ if is_windows == 1
 endif
 
 let g:ctrlp_by_filename = 0
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git'
 let g:ctrlp_working_path_mode = 0
 
 "" powerline
